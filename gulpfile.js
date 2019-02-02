@@ -1,4 +1,5 @@
 const { src, dest, series } = require('gulp');
+const debug = require('gulp-debug');
 
 const gulpZip = require('gulp-zip');
 
@@ -41,6 +42,10 @@ function zip(cb) {
         .pipe(gulpZip(`${package.name}_${package.version}.zip`))
         .pipe(dest('dist'));
         console.log('ziped!');
+
+    src('dist/*')
+    .pipe(debug());
+
     cb();
 }
 
