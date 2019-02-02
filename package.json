@@ -12,5 +12,10 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "4.16.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-zip": "^4.2.0"
   }
 }

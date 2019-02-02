@@ -3,8 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing octopusdeploy...
-      - npm install -g @octopusdeploy/octojs
+      - echo Installing gulp...
+      - npm install -g gulp-cli gulp
   pre_build:
     commands:
       - npm install
@@ -12,10 +12,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      - octojs pack -O . --gitignore --dependencies prod
+      - gulp
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - nodejs_aws.*.zip
+    - dist/nodejs_aws.*.zip
