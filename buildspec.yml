@@ -12,7 +12,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      - octojs pack -O . --gitignore --dependencies prod --include server.js --include package.json --include package-lock.json
+      - octojs pack -O . --gitignore --dependencies prod
   post_build:
     commands:
       - echo Build completed on `date`
