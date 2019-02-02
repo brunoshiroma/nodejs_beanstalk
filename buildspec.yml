@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing gulp...
-      - npm install -g gulp-cli gulp
+      - npm install -g gulp-cli gulp gulp-debug gulp-zip
   pre_build:
     commands:
       - npm install
