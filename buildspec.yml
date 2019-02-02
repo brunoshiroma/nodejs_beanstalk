@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing octopusdeploy...
+      - npm install -g @octopusdeploy/octojs
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - octojs pack -O . --gitignore --dependencies prod
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - nodejs_aws.*.zip
