@@ -1,16 +1,12 @@
 version: 0.2
 
 phases:
-  bump_version:
+  pre_build:
     commands:
       - echo npm version...
       - npm version prerelease -m "CI BUILD"
-  install:
-    commands:
       - echo Installing gulp...
       - npm install -g gulp-cli@2.0.0 gulp@4.0.0 gulp-debug@4.0.0 gulp-zip@4.2.0
-  pre_build:
-    commands:
       - echo Installing dependencies...
       - npm install
   build:
