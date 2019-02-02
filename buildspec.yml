@@ -1,6 +1,10 @@
 version: 0.2
 
 phases:
+  bump_version:
+    commands:
+      - echo npm version...
+      - npm version prerelease -m "CI BUILD"
   install:
     commands:
       - echo Installing gulp...
@@ -9,8 +13,6 @@ phases:
     commands:
       - echo Installing dependencies...
       - npm install
-      - echo npm version...
-      - npm version prerelease -m "CI BUILD"
   build:
     commands:
       - echo Build started on `date`
