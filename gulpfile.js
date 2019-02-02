@@ -6,47 +6,33 @@ const gulpZip = require('gulp-zip');
 const package = require('./package.json');
 const clean = require('gulp-clean');
 
-function cleanOutputTask(cb) {
-    src('output/', { allowEmpty: true })
-        .pipe(clean({ read: false}))
-
-    cb();
+function cleanOutputTask() {
+    return src('output/', { allowEmpty: true })
+        .pipe(clean({ read: false }));
 }
 
 function cleanDistTask(cb) {
-    src('dist/', { allowEmpty: true })
-        .pipe(clean({ read: false }))
-
-    cb();
+    return src('dist/', { allowEmpty: true })
+        .pipe(clean({ read: false }));
 }
 
-function copyTask(cb) {
-    src('node_modules/**')
+function copyNodeModulesTask() {
+    return src(['node_modules/**'], 
+        { buffer: false })
         .pipe(dest('output/node_modules/'));
-
-    src('server.js')
-        .pipe(dest('output/'));
-
-    src('package-lock.json')
-        .pipe(dest('output/'));
-
-    src('package.json')
-        .pipe(dest('output/'));
-    cb();
 }
 
+function copyFilesTask() {
+    return src(['server.js', 'package-lock.json', 'package.json'], 
+        { buffer: false })
+        .pipe(dest('output/'));
+}
 
-function zip(cb) {
-    console.log('ziping..');
-    src('output/**')
+function zip() {
+    return src('output/**', { buffer: false })
         .pipe(gulpZip(`${package.name}_${package.version}.zip`))
+        .pipe(debug())
         .pipe(dest('dist'));
-        console.log('ziped!');
-
-    src('dist/*')
-    .pipe(debug());
-
-    cb();
 }
 
-exports.default = series(copyTask, zip);
+exports.default = series(cleanOutputTask, cleanDistTask, copyNodeModulesTask, copyFilesTask, zip);
