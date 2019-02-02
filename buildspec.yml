@@ -1,6 +1,11 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo setup git...
+      - git config --global user.email "ci@email.com"
+      - git config --global user.name "Continuous Integration"
   pre_build:
     commands:
       - echo npm version...
