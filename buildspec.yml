@@ -11,11 +11,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Compiling the Node.js code
       - gulp
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - dist/nodejs_aws.*.zip
+    - dist/nodejs_aws_*.zip
