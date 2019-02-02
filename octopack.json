@@ -1,0 +1,6 @@
+{
+    "format": "zip",
+    "outFolder": "./publish",
+    "verbose": false,
+    "include": ["server.js", "package-lock.json", "package.json"]
+}
