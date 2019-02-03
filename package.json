@@ -1,6 +1,6 @@
 {
   "name": "nodejs_aws",
-  "version": "1.0.0",
+  "version": "1.0.4-3",
   "description": "nodejs beanstalk",
   "main": "index.js",
   "scripts": {

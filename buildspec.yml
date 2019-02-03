@@ -21,7 +21,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - git push HEAD:master --follow-tags
+      - git push origin HEAD:master --follow-tags
 artifacts:
   files:
     - dist/*.zip
