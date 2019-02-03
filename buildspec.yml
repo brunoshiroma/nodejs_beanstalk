@@ -7,6 +7,8 @@ phases:
       - npm install -g gulp-cli@2.0.0 gulp@4.0.0 gulp-debug@4.0.0 gulp-zip@4.2.0
       - echo Installing dependencies...
       - npm install --production
+      - echo link gulp...
+      - npm link gulp gulp-debug gulp-zip
   build:
     commands:
       - echo Build started on `date`
@@ -14,7 +16,6 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - git push origin HEAD:master --follow-tags
 artifacts:
   files:
     - dist/*.zip
