@@ -4,8 +4,8 @@
   "description": "nodejs beanstalk",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha **/*.spec.js",
+    "start": "node server.js start"
   },
   "author": "Bruno Shiroma",
   "license": "ISC",
@@ -14,9 +14,13 @@
     "express": "4.16.4"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.13.0",
+    "eslint-config-strongloop": "^2.1.0",
     "gulp": "4.0.0",
     "gulp-clean": "0.4.0",
     "gulp-debug": "4.0.0",
-    "gulp-zip": "4.2.0"
+    "gulp-zip": "4.2.0",
+    "mocha": "^5.2.0"
   }
 }
