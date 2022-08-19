@@ -21,7 +21,7 @@
     "gulp-clean": "0.4.0",
     "gulp-debug": "4.0.0",
     "gulp-zip": "4.2.0",
-    "mocha": "^8.3.2",
+    "mocha": "^10.0.0",
     "yargs-parser": "20.2.7"
   }
 }
